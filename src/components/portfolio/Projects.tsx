@@ -5,58 +5,13 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "TaskFlow Pro",
-    description: "A full-stack task management application with real-time collaboration features, drag-and-drop functionality, and team workspaces.",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS"],
-    role: "Full Stack Developer",
+    title: "Personal Portfolio",
+    description: "Designed and developed a responsive personal portfolio to showcase my skills, projects, and contact details.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    role: "Design & Development",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/ToshitSai",
     featured: true,
-  },
-  {
-    title: "EcoTracker",
-    description: "Mobile-first web app for tracking personal carbon footprint with data visualization and eco-friendly suggestions.",
-    technologies: ["Next.js", "TypeScript", "Chart.js", "PostgreSQL"],
-    role: "Frontend Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    title: "CryptoWatch Dashboard",
-    description: "Real-time cryptocurrency tracking dashboard with price alerts, portfolio management, and market analysis.",
-    technologies: ["React", "Redux", "REST API", "Styled Components"],
-    role: "Solo Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    title: "StudyBuddy AI",
-    description: "AI-powered study assistant that generates quizzes, flashcards, and summaries from uploaded documents.",
-    technologies: ["Python", "Flask", "OpenAI API", "React"],
-    role: "Backend Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    title: "LocalEats",
-    description: "Restaurant discovery platform focused on local eateries with reviews, ratings, and reservation system.",
-    technologies: ["Vue.js", "Express", "MySQL", "Google Maps API"],
-    role: "Full Stack Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    title: "DevBlog",
-    description: "Minimalist blog platform for developers with Markdown support, syntax highlighting, and SEO optimization.",
-    technologies: ["Next.js", "MDX", "Prisma", "Vercel"],
-    role: "Solo Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
   },
 ];
 
@@ -160,7 +115,7 @@ const Projects = () => {
           className="text-center mt-12"
         >
           <Button variant="outline" size="lg" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/ToshitSai" target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4 mr-2" />
               View More on GitHub
             </a>

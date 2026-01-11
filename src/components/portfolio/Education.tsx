@@ -4,31 +4,30 @@ import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 
 const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "State University of Technology",
-    location: "San Francisco, CA",
-    period: "2022 - 2026 (Expected)",
+    degree: "Bachelor of Technology (B.Tech) in Computer Science Engineering",
+    institution: "XYZ University / College",
+    location: "India",
+    period: "2025 - 2029",
     status: "In Progress",
-    gpa: "3.8/4.0",
+    gpa: "",
     highlights: [
-      "Data Structures & Algorithms",
-      "Database Systems",
+      "Computer Science Engineering",
       "Web Development",
+      "Data Structures & Algorithms",
       "Software Engineering",
-      "Machine Learning Fundamentals",
     ],
   },
   {
-    degree: "High School Diploma",
-    institution: "Central High School",
-    location: "Oakland, CA",
-    period: "2018 - 2022",
+    degree: "Intermediate (12th Grade) - MPC Stream",
+    institution: "Bhavishya Junior College",
+    location: "India",
+    period: "2021 - 2023",
     status: "Completed",
-    gpa: "3.9/4.0",
+    gpa: "",
     highlights: [
-      "AP Computer Science A",
-      "AP Mathematics",
-      "Science Club President",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
     ],
   },
 ];
@@ -84,10 +83,12 @@ const Education = () => {
                       <h3 className="text-xl font-semibold text-foreground">{item.degree}</h3>
                       <p className="text-muted-foreground font-medium">{item.institution}</p>
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                      <Award className="w-4 h-4" />
-                      GPA: {item.gpa}
-                    </div>
+                    {item.gpa && (
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                        <Award className="w-4 h-4" />
+                        GPA: {item.gpa}
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">

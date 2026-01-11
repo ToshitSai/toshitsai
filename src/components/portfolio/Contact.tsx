@@ -1,21 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "alex.chen@email.com", href: "mailto:alex.chen@email.com" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: null },
+  { icon: Mail, label: "Email", value: "iamtoshitsai@gmail.com", href: "mailto:iamtoshitsai@gmail.com" },
+  { icon: MapPin, label: "Location", value: "India", href: null },
 ];
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
+  { icon: Github, label: "GitHub", href: "https://github.com/ToshitSai" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/" },
 ];
 
 const Contact = () => {
@@ -185,7 +183,7 @@ const Contact = () => {
             <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-accent/20">
               <p className="text-foreground font-medium mb-2">Looking for an intern?</p>
               <p className="text-sm text-muted-foreground">
-                I'm currently seeking summer 2026 internship opportunities in software development. 
+                I'm currently seeking internship or entry-level opportunities in software development. 
                 Let's discuss how I can contribute to your team!
               </p>
             </div>

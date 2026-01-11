@@ -55,19 +55,18 @@ const About = () => {
           >
             <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                Hello! I'm a <span className="text-foreground font-medium">Computer Science student</span> with 
-                a deep passion for technology and software development. Currently in my third year, 
-                I'm focused on building practical skills through hands-on projects.
+                Hello! I'm <span className="text-foreground font-medium">Toshit Sai Galam</span>, a motivated 
+                student with a strong interest in <span className="text-foreground font-medium">web development</span> and 
+                emerging technologies.
               </p>
               <p className="leading-relaxed">
-                My journey in tech began with curiosity about how apps work, which evolved into 
-                a love for creating them. I specialize in <span className="text-foreground font-medium">web development</span> and 
-                am exploring areas like cloud computing and AI/ML.
+                I enjoy building real-world projects that help me improve my problem-solving and 
+                technical skills. Currently pursuing my B.Tech in Computer Science Engineering, 
+                I'm focused on learning modern technologies through hands-on experience.
               </p>
               <p className="leading-relaxed">
-                I'm actively seeking <span className="text-foreground font-medium">internship opportunities</span> where 
-                I can contribute to meaningful projects while growing as a developer. My goal is 
-                to join a team that values innovation and continuous learning.
+                My goal is to secure an <span className="text-foreground font-medium">internship or entry-level role</span> where 
+                I can learn, grow, and contribute to meaningful software solutions.
               </p>
             </div>
 

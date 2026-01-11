@@ -11,7 +11,7 @@ const footerLinks = [
 const socialLinks = [
   { icon: Github, href: "https://github.com/ToshitSai", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/toshit.codespace?igsh=NWF2M2hsd3kwcjRj", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/toshit.codespace/", label: "Instagram" },
   { icon: Mail, href: "mailto:iamtoshitsai@gmail.com", label: "Email" },
 ];
 

@@ -14,7 +14,7 @@ const contactInfo = [
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/ToshitSai" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/toshit.codespace?igsh=NWF2M2hsd3kwcjRj" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/toshit.codespace/" },
 ];
 
 const Contact = () => {

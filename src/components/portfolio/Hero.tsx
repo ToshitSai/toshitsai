@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -77,7 +77,7 @@ const Hero = () => {
             {[
               { icon: Github, href: "https://github.com/ToshitSai", label: "GitHub" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/", label: "LinkedIn" },
-              { icon: Instagram, href: "https://www.instagram.com/toshit.codespace/", label: "Instagram" },
+              
               { icon: Mail, href: "mailto:iamtoshitsai@gmail.com", label: "Email" },
             ].map((social) => (
               <a

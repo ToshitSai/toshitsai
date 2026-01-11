@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +14,7 @@ const contactInfo = [
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/ToshitSai" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/toshit.codespace?igsh=NWF2M2hsd3kwcjRj" },
 ];
 
 const Contact = () => {

@@ -5,7 +5,7 @@ import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 const education = [
   {
     degree: "Bachelor of Technology (B.Tech) in Computer Science Engineering",
-    institution: "XYZ University / College",
+    institution: "Chaitanya Deemed to be University\nNxtWave Institute of Advanced Technologies (NIAT)",
     location: "India",
     period: "2025 - 2029",
     status: "In Progress",

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Instagram } from "lucide-react";
 
 const footerLinks = [
   { name: "About", href: "#about" },
@@ -11,6 +11,7 @@ const footerLinks = [
 const socialLinks = [
   { icon: Github, href: "https://github.com/ToshitSai", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/toshit.codespace?igsh=NWF2M2hsd3kwcjRj", label: "Instagram" },
   { icon: Mail, href: "mailto:iamtoshitsai@gmail.com", label: "Email" },
 ];
 

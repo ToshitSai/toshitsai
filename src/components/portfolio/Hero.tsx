@@ -29,7 +29,7 @@ const Hero = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
           >
             Hi, I'm{" "}
-            <span className="text-gradient">Alex Chen</span>
+            <span className="text-gradient">Toshit Sai Galam</span>
           </motion.h1>
 
           {/* Role */}
@@ -39,7 +39,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-4"
           >
-            Student • Aspiring Developer • Tech Enthusiast
+            Student • Developer • Tech Enthusiast
           </motion.p>
 
           {/* Tagline */}
@@ -49,8 +49,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base md:text-lg text-muted-foreground/80 mb-10 max-w-xl mx-auto"
           >
-            Building meaningful projects while mastering modern technologies.
-            Passionate about creating clean, efficient, and user-friendly applications.
+            Building projects while learning modern technologies.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -76,9 +75,9 @@ const Hero = () => {
             className="flex items-center justify-center gap-4"
           >
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:alex@example.com", label: "Email" },
+              { icon: Github, href: "https://github.com/ToshitSai", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/toshit-sai-galam-177788276/", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:iamtoshitsai@gmail.com", label: "Email" },
             ].map((social) => (
               <a
                 key={social.label}

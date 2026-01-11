@@ -4,24 +4,24 @@ import { Code2, Globe, Wrench, Sparkles } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Programming Languages",
-    icon: Code2,
-    skills: ["JavaScript", "TypeScript", "Python", "Java", "C++", "SQL"],
-  },
-  {
     title: "Web Technologies",
     icon: Globe,
-    skills: ["React", "Next.js", "Node.js", "HTML5", "CSS3", "Tailwind CSS", "REST APIs"],
+    skills: ["HTML", "CSS", "React (Basics)", "Node.js (Basics)"],
   },
   {
-    title: "Tools & Software",
+    title: "Frameworks & Libraries",
+    icon: Code2,
+    skills: ["Bootstrap", "Tailwind CSS"],
+  },
+  {
+    title: "Tools & Platforms",
     icon: Wrench,
-    skills: ["Git", "GitHub", "VS Code", "Docker", "Figma", "Postman", "Linux"],
+    skills: ["Git", "GitHub", "VS Code", "Webflow"],
   },
   {
     title: "Soft Skills",
     icon: Sparkles,
-    skills: ["Problem Solving", "Team Collaboration", "Communication", "Time Management", "Adaptability"],
+    skills: ["Problem Solving", "Teamwork", "Communication", "Time Management"],
   },
 ];
 

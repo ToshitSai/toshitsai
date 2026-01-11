@@ -81,7 +81,7 @@ const Education = () => {
                         </span>
                       </div>
                       <h3 className="text-xl font-semibold text-foreground">{item.degree}</h3>
-                      <p className="text-muted-foreground font-medium">{item.institution}</p>
+                      <p className="text-muted-foreground font-medium whitespace-pre-line">{item.institution}</p>
                     </div>
                     {item.gpa && (
                       <div className="flex items-center gap-1 text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">

@@ -36,8 +36,9 @@ const Header = () => {
     >
       <nav className="container-narrow">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="text-xl font-semibold text-foreground">
-            Portfolio<span className="text-accent">.</span>
+          <a href="#" className="flex items-center gap-2 text-xl font-semibold text-foreground">
+            <img src="/favicon.png" alt="TS Logo" className="w-8 h-8 rounded" />
+            <span>Toshit<span className="text-accent">.</span></span>
           </a>
 
           {/* Desktop Navigation */}

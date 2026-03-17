@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "CourseForge AI",
+    description: "An AI-powered course generator that creates structured syllabi, detailed explanations, YouTube video recommendations, MCQ quizzes, and key terms glossaries — all in under 60 seconds.",
+    technologies: ["React", "AI", "Vercel", "API"],
+    role: "Full Stack Development",
+    liveUrl: "https://courseforge-ai-pied.vercel.app/",
+    githubUrl: "https://github.com/ToshitSai",
+    featured: true,
+  },
+  {
     title: "Personal Portfolio",
     description: "Designed and developed a responsive personal portfolio to showcase my skills, projects, and contact details.",
     technologies: ["HTML", "CSS", "JavaScript"],

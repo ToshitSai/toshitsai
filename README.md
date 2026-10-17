@@ -7,8 +7,6 @@
 
 <div align="center">
 
-# TOSHIT SAI GALAM
-
 **AI Product Developer · Prompt Engineer · AI Video Creator**
 
 _Building useful AI products and creative technology experiences._
@@ -37,46 +35,10 @@ _Building useful AI products and creative technology experiences._
 </td></tr></table>
 
 ## ⚡ Tech Stack
-| Category | Technologies |
-| --- | --- |
-| Languages | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) |
-| Frontend | ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) |
-| Backend | ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white) |
-| AI & Prompting | ![Gemini](https://img.shields.io/badge/Gemini%20API-4285F4?logo=google&logoColor=white) ![Groq](https://img.shields.io/badge/Groq-F55036?logo=groq&logoColor=white) ![Prompt Engineering](https://img.shields.io/badge/Prompt%20Engineering-7C3AED?logo=openai&logoColor=white) |
-| Tools | ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white) |
+<table><tr><td valign="top" width="50%"><strong>💻 Languages</strong><br /><img src="https://skillicons.dev/icons?i=javascript,typescript,python" alt="JavaScript TypeScript Python" /></td><td valign="top" width="50%"><strong>🎨 Frontend</strong><br /><img src="https://skillicons.dev/icons?i=react,vite" alt="React Vite" /></td></tr><tr><td valign="top"><strong>⚙️ Backend</strong><br /><img src="https://skillicons.dev/icons?i=nodejs,flask" alt="Node.js Flask" /></td><td valign="top"><strong>🤖 AI &amp; Prompting</strong><br /><img src="https://img.shields.io/badge/Prompt%20Engineering-7C3AED?logo=openai&amp;logoColor=white" alt="Prompt Engineering" /> <img src="https://img.shields.io/badge/Groq-F55036?logo=groq&amp;logoColor=white" alt="Groq" /></td></tr><tr><td valign="top" colspan="2"><strong>🛠️ Tools</strong><br /><img src="https://skillicons.dev/icons?i=git,vercel,threejs" alt="Git Vercel Three.js" /></td></tr></table>
 
 ## 🚀 Featured Projects
-<table><tr><td width="50%">
-### 🤖 [CourseForge AI](https://github.com/ToshitSai/courseforge-ai)
-AI course generator turning topics into structured lessons, quizzes, and curated video resources.
-`React` `Gemini API` `YouTube API` `Vercel`
-- ✔ Structured learning content
-- ✔ Quizzes and curated resources
-</td><td width="50%">
-### 🧠 [HireScope / Job Gem Grader](https://github.com/ToshitSai/job-gem-grader)
-Resume and portfolio analyzer for role fit, keywords, strengths, and improvement areas.
-`Next.js` `Puppeteer` `Claude API` `Serper API`
-- ✔ Role-alignment review
-- ✔ Actionable feedback
-</td></tr><tr><td>
-### 💌 [Greetly](https://github.com/ToshitSai/greetly)
-Personalized greeting generator with tone controls, authentication, and saved message flows.
-`React` `Flask` `Groq API` `JWT`
-- ✔ Occasion and tone generation
-- ✔ Accounts and saved messages
-</td><td>
-### 🎨 [Toshit Portfolio](https://github.com/ToshitSai/toshit-portfolio)
-Animated personal portfolio with project showcases, case-study views, and contact routes.
-`React` `TypeScript` `Vite` `Framer Motion`
-- ✔ Animated case studies
-- ✔ Contact and portfolio routes
-</td></tr><tr><td>
-### 🛡️ [Avengers: Doomsday](https://github.com/ToshitSai/Avengers-DoomsDay-)
-Cinematic scroll experience with video scrubbing, WebGL atmosphere, particles, and story panels.
-`Next.js` `React` `Three.js` `GSAP`
-- ✔ Scroll-scrubbed sequences
-- ✔ WebGL particles, fog, lightning, and portals
-</td><td></td></tr></table>
+<table><tr><td valign="top" width="50%"><h3>🤖 <a href="https://github.com/ToshitSai/courseforge-ai">CourseForge AI</a></h3><p>AI course generator turning topics into structured lessons, quizzes, and curated video resources.</p><p><code>React</code> <code>Gemini API</code> <code>YouTube API</code> <code>Vercel</code></p><ul><li>✔ Structured learning content</li><li>✔ Quizzes and curated resources</li></ul></td><td valign="top" width="50%"><h3>🧠 <a href="https://github.com/ToshitSai/job-gem-grader">HireScope / Job Gem Grader</a></h3><p>Resume and portfolio analyzer for role fit, keywords, strengths, and improvement areas.</p><p><code>Next.js</code> <code>Puppeteer</code> <code>Claude API</code> <code>Serper API</code></p><ul><li>✔ Role-alignment review</li><li>✔ Actionable feedback</li></ul></td></tr><tr><td valign="top"><h3>💌 <a href="https://github.com/ToshitSai/greetly">Greetly</a></h3><p>Personalized greeting generator with tone controls, authentication, and saved message flows.</p><p><code>React</code> <code>Flask</code> <code>Groq API</code> <code>JWT</code></p><ul><li>✔ Occasion and tone generation</li><li>✔ Accounts and saved messages</li></ul></td><td valign="top"><h3>🎨 <a href="https://github.com/ToshitSai/toshit-portfolio">Toshit Portfolio</a></h3><p>Animated personal portfolio with project showcases, case-study views, and contact routes.</p><p><code>React</code> <code>TypeScript</code> <code>Vite</code> <code>Framer Motion</code></p><ul><li>✔ Animated case studies</li><li>✔ Contact and portfolio routes</li></ul></td></tr><tr><td valign="top" colspan="2"><h3>🛡️ <a href="https://github.com/ToshitSai/Avengers-DoomsDay-">Avengers: Doomsday</a></h3><p>Cinematic scroll experience with video scrubbing, WebGL atmosphere, particles, and story panels.</p><p><code>Next.js</code> <code>React</code> <code>Three.js</code> <code>GSAP</code></p><ul><li>✔ Scroll-scrubbed sequences</li><li>✔ WebGL particles, fog, lightning, and portals</li></ul></td></tr></table>
 
 ## 🎯 Focus Areas
 | 🤖 AI Products | ✍️ Prompt Engineering | 🎬 Creative Tech |
@@ -93,4 +55,4 @@ Cinematic scroll experience with video scrubbing, WebGL atmosphere, particles, a
 ## 🤝 Connect With Me
 If you’re building with AI, automation, or creative technology, connect through [LinkedIn](https://www.linkedin.com/in/toshit-sai-galam-177788276/) or [my portfolio](https://toshit-portfolio.vercel.app/).
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,50:14532D,100:39D353&height=120&section=footer" alt="Footer wave" /></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,55:7C3AED,100:0d1117&height=80&section=footer" alt="Footer wave" /></div>

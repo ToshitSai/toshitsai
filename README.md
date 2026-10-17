@@ -1,8 +1,9 @@
 <div align="center">
 <img src="./assets/github-contribution-animation.svg" alt="Animated GitHub contribution calendar" />
+<br />712 contributions in 2026
 </div>
 
-<table><tr><td width="50%"><img src="./assets/terminal-card.svg" alt="Animated terminal portrait" /></td><td width="50%"><img src="./assets/info-card.svg" alt="Neofetch information card" /></td></tr></table>
+<table><tr><td width="48%"><img width="100%" src="./assets/terminal-card.svg" alt="Animated terminal portrait" /></td><td width="52%"><img width="100%" src="./assets/info-card.svg" alt="Neofetch information card" /></td></tr></table>
 
 <div align="center">
 

@@ -1,32 +1,50 @@
 from __future__ import annotations
-import datetime as dt, json, os, urllib.request
+import datetime as dt, json, os, re, sys, urllib.request
 from pathlib import Path
 from xml.sax.saxutils import escape
 from PIL import Image, ImageOps, ImageEnhance
-ROOT=Path(__file__).resolve().parents[1]; ASSETS=ROOT/'assets'; FONT="'Fira Code','JetBrains Mono',Consolas,monospace"
-def data():
- q='query($login:String!,$from:DateTime!,$to:DateTime!){user(login:$login){contributionsCollection(from:$from,to:$to){contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}'; body=json.dumps({'query':q,'variables':{'login':'ToshitSai','from':'2026-01-01T00:00:00Z','to':'2026-12-31T23:59:59Z'}}).encode(); req=urllib.request.Request('https://api.github.com/graphql',data=body,headers={'Content-Type':'application/json','Authorization':f'bearer {os.environ.get("GITHUB_TOKEN","")}'})
+
+ROOT=Path(__file__).resolve().parents[1]; A=ROOT/'assets'; FONT='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace'
+
+def get_json():
+ q='query($login:String!,$from:DateTime!,$to:DateTime!){user(login:$login){contributionsCollection(from:$from,to:$to){contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}'
+ body=json.dumps({'query':q,'variables':{'login':'ToshitSai','from':'2026-01-01T00:00:00Z','to':'2026-12-31T23:59:59Z'}}).encode(); tok=os.getenv('PROFILE_GITHUB_TOKEN') or os.getenv('GITHUB_TOKEN',''); req=urllib.request.Request('https://api.github.com/graphql',data=body,headers={'Content-Type':'application/json','Authorization':f'bearer {tok}'})
  with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)['data']['user']['contributionsCollection']
-def contribution(d):
- first=dt.date(2026,1,1); first-=dt.timedelta(days=(first.weekday()+1)%7); ds={dt.date.fromisoformat(x['date']):int(x['contributionCount']) for w in d.get('weeks',[]) for x in w['contributionDays']}; cs=['#161b22','#0e4429','#006d32','#26a641','#39d353']; cells=[]
+
+def public_data():
+ u='https://github.com/users/ToshitSai/contributions?from=2026-01-01&to=2026-12-31'; html=urllib.request.urlopen(u,timeout=30).read().decode('utf-8','ignore'); ds={}; total=0
+ for n in re.findall(r'(?:aria-label="|>)(\d+) contributions? (?:on|in)',html): total+=int(n)
+ for date,level in re.findall(r'data-date="(2026-\d\d-\d\d)"[^>]*data-level="(\d)"',html): ds[dt.date.fromisoformat(date)]=int(level)
+ if not ds: raise RuntimeError('public contribution page contained no 2026 day cells')
+ return {'totalContributions':total or sum(1 for x in ds.values() if x), 'levels':ds}
+
+def contribution_svg(d):
+ first=dt.date(2026,1,1); first-=dt.timedelta(days=(first.weekday()+1)%7); levels=d.get('levels',{}); total=int(d['totalContributions']); colors=['#161b22','#0e4429','#006d32','#26a641','#39d353']; tints=['','#57ffb0','#8dffcc','#c8ffe8','#c8ffe8']; cells=[]
  for c in range(53):
   for r in range(7):
-   day=first+dt.timedelta(days=c*7+r); n=ds.get(day,0) if day.year==2026 and day<=dt.date.today() else 0; x,y=64+c*14,42+r*14; delay=c*.055; cells.append(f'<rect x="{x}" y="{y}" width="11" height="11" rx="2" fill="{cs[min(4,1+n//4) if n else 0]}" opacity="{.28 if day>dt.date.today() else .9}"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="8s" begin="{delay:.3f}s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" values=".82 .82;1 1;1 1;.82 .82" keyTimes="0;.12;.82;1" dur="8s" begin="{delay:.3f}s" repeatCount="indefinite"/></rect>')
- labels=''.join(f'<text x="{64+((dt.date(2026,m,1)-first).days//7)*14}" y="25" fill="#8b949e" font-family="{FONT}" font-size="11">{dt.date(2026,m,1):%b}</text>' for m in range(1,13)); total=int(d.get('totalContributions',sum(ds.values())))
- return f'<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 830 190"><rect x="1" y="1" width="828" height="188" rx="18" fill="#0d1117" stroke="#30363d"/>{labels}<text x="14" y="63" fill="#8b949e" font-family="{FONT}" font-size="10">Mon</text><text x="14" y="105" fill="#8b949e" font-family="{FONT}" font-size="10">Wed</text><text x="14" y="147" fill="#8b949e" font-family="{FONT}" font-size="10">Fri</text>{"".join(cells)}<text x="64" y="178" fill="#39d353" font-family="{FONT}" font-size="10">{total} contributions in 2026</text></svg>'
+   day=first+dt.timedelta(days=c*7+r); n=levels.get(day,0) if day<=dt.date.today() and day.year==2026 else 0; x,y=34+14*c,28+14*r; level=min(4,n); t=c*.0115+r*.0069; glow=' filter="url(#cellglow)"' if level>=3 else ''; anim=f'<animate attributeName="opacity" values="0;0;1;1" keyTimes="0;{t:.4f};{t+.012:.4f};1" dur="7s" repeatCount="indefinite"/><animate attributeName="fill" values="{colors[level]};{tints[level] or colors[level]};{colors[level]}" keyTimes="0;{t:.4f};{t+.05:.4f}" dur="7s" repeatCount="indefinite" calcMode="spline"/>' if level else '<animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0;0.012;1" dur="7s" repeatCount="indefinite"/>'; sparkle=f'<rect x="{x+2}" y="{y+2}" width="4" height="2" rx="1" fill="white"><animate attributeName="opacity" values="0;0.55;0" keyTimes="0;{t:.4f};{t+.05:.4f}" dur="7s" repeatCount="indefinite"/></rect>' if level else ''; cells.append(f'<rect x="{x}" y="{y}" width="11" height="11" rx="2" fill="{colors[level]}" opacity="0"{glow}>{anim}</rect>{sparkle}')
+ labels=''.join(f'<text x="{34+((dt.date(2026,m,1)-first).days//7)*14}" y="18" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10">{dt.date(2026,m,1):%b}</text>' for m in range(1,13)); return f'<svg xmlns="http://www.w3.org/2000/svg" width="850" height="165" viewBox="0 0 850 165"><defs><filter id="cellglow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect x="0.5" y="0.5" width="849" height="164" rx="16" fill="#0d1117" stroke="#30363d"/>{labels}<g fill="#8b949e" font-family="system-ui,sans-serif" font-size="9"><text x="0" y="38">Mon</text><text x="0" y="66">Wed</text><text x="0" y="94">Fri</text></g>{"".join(cells)}</svg>'
+
 def terminal():
- im=Image.open(ASSETS/'avatar.jpg').convert('L'); s=min(im.size); im=im.crop(((im.width-s)//2,(im.height-s)//2,(im.width+s)//2,(im.height+s)//2)); im=ImageEnhance.Contrast(ImageOps.autocontrast(im)).enhance(1.25).resize((64,36)); ramp=' .:-=+*#%@'; rows=[''.join(ramp[min(9,im.getpixel((x,y))*10//256)] for x in range(64)) for y in range(36)]; ts=''.join(f'<text x="18" y="{58+i*6.1:.1f}" fill="#39d353" opacity="0" font-family="{FONT}" font-size="5.8" xml:space="preserve">{escape(row)}<animate attributeName="opacity" from="0" to="1" dur="0.18s" begin="{i*.06:.2f}s" fill="freeze"/></text>' for i,row in enumerate(rows)); return f'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="350" viewBox="0 0 830 350"><rect x="1" y="1" width="828" height="348" rx="16" fill="#111827" stroke="#374151"/><circle cx="22" cy="22" r="6" fill="#ff5f56"/><circle cx="42" cy="22" r="6" fill="#ffbd2e"/><circle cx="62" cy="22" r="6" fill="#27c93f"/><text x="82" y="26" fill="#9ca3af" font-family="{FONT}" font-size="11">toshitsai@github:~$ ./portrait</text>{ts}<text x="18" y="337" fill="#60a5fa" font-family="{FONT}" font-size="12">toshitsai@github:~$ neofetch<tspan fill="#39d353"> ▮</tspan><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></text></svg>'
+ im=Image.open(A/'avatar.jpg').convert('L'); s=min(im.size); im=im.crop(((im.width-s)//2,(im.height-s)//2,(im.width+s)//2,(im.height+s)//2)); im=ImageEnhance.Contrast(ImageOps.autocontrast(im)).enhance(1.2).resize((100,53)); ramp="#@%SsC*+=:-'.` "; rows=[''.join(ramp[min(len(ramp)-1,p*len(ramp)//256)] for p in [im.getpixel((x,y)) for x in range(100)]) for y in range(53)]; body=[]
+ for i,row in enumerate(rows):
+  y=48.1+15*i; clip=f'<clipPath id="r{i}"><rect x="20" y="{37+15*i}" width="0" height="15"><animate attributeName="width" from="0" to="800" begin="{.11*i:.2f}s" dur=".11s" fill="freeze"/></rect></clipPath>'; cursor=f'<rect x="20" y="{y-12}" width="8" height="13" fill="#c9d1d9" opacity="0"><animate attributeName="x" from="20" to="820" begin="{.11*i:.2f}s" dur=".11s" fill="freeze"/><animate attributeName="opacity" values=".85;0" begin="{.11*i:.2f}s" dur=".11s" fill="freeze"/></rect>'; body.append(clip+f'<text xml:space="preserve" x="20" y="{y}" fill="#c9d1d9" font-family="{FONT}" font-size="12.9" textLength="800" lengthAdjust="spacing" clip-path="url(#r{i})">{escape(row)}</text>'+cursor)
+ return f'<svg xmlns="http://www.w3.org/2000/svg" width="840" height="875" viewBox="0 0 840 875"><defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#111722"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs><rect x=".5" y=".5" width="839" height="874" rx="12" fill="url(#bg)" stroke="#30363d"/><line x1="0" y1="30" x2="840" y2="30" stroke="#30363d"/><circle cx="20" cy="15" r="5" fill="#ff5f56"/><circle cx="36" cy="15" r="5" fill="#ffbd2e"/><circle cx="52" cy="15" r="5" fill="#27c93f"/><text x="420" y="19" text-anchor="middle" fill="#7d8590" font-family="{FONT}" font-size="12">ToshitSai@github: ~$ ./portrait.sh</text>{"".join(body)}<line x1="20" y1="832" x2="820" y2="832" stroke="#30363d"/><text x="20" y="851" fill="#7d8590" font-family="{FONT}" font-size="13">ToshitSai@github:~$ whoami <tspan fill="#c9d1d9">Toshit Sai Galam</tspan></text><rect x="250" y="838" width="8" height="14" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>'
+
 def info():
- rows=[('ToshitSai','@ github','u'),('','────────────────────────','d'),('Role','AI Product Developer','k'),('Focus','AI products & Prompt Engineering','k'),('College','NIAT','k'),('— Stack —','','s'),('Frontend','React','k'),('Backend','Node.js','k'),('Language','JavaScript · TypeScript · Python','k'),('AI','Prompt Engineering','k'),('— Highlights —','','s'),('●','CourseForge AI','b'),('●','Greetly','b'),('●','Job Gem Grader','b'),('●','Portfolio on Vercel','b')]; h=40+len(rows)*20+24; out=[]
+ rows=[('Role','AI Product Developer','k'),('Focus','AI products & Prompt Engineering','k'),('College','NIAT','k'),('— Stack','', 's'),('Frontend','React','k'),('Backend','Node.js','k'),('Language','JavaScript, TypeScript, Python','k'),('AI','Prompt Engineering','k'),('— Highlights','', 's'),('●','CourseForge AI','b'),('●','Greetly','b'),('●','Job Gem Grader','b'),('●','Portfolio on Vercel','b')]; H=40+60+len(rows)*21+40; out=[]
  for i,(k,v,t) in enumerate(rows):
-  k=escape(k); v=escape(v)
-  y=58+i*20; a=f'<animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="{i*.12:.2f}s" fill="freeze"/>'
-  if t=='u':out.append(f'<text x="24" y="{y}" fill="#39D0D8" font-family="{FONT}" font-size="13" opacity="0">{k}<tspan fill="#3FB950"> {v}</tspan>{a}</text>')
-  elif t=='d':out.append(f'<text x="24" y="{y}" fill="#484f58" font-family="{FONT}" font-size="11" opacity="0">{v}{a}</text>')
-  elif t=='s':out.append(f'<text x="24" y="{y}" fill="#58A6FF" font-family="{FONT}" font-size="12" opacity="0">{k}{a}</text>')
-  elif t=='k':out.append(f'<text x="24" y="{y}" fill="#E8833A" font-family="{FONT}" font-size="11" opacity="0">{k}</text><text x="130" y="{y}" fill="#C9D1D9" font-family="{FONT}" font-size="11" opacity="0">{v}{a}</text>')
-  else:out.append(f'<text x="24" y="{y}" fill="#39D353" font-family="{FONT}" font-size="11" opacity="0">{k}</text><text x="42" y="{y}" fill="#C9D1D9" font-family="{FONT}" font-size="11" opacity="0">{v}{a}</text>')
- return f'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="{h}" viewBox="0 0 830 {h}"><rect x="1" y="1" width="828" height="{h-2}" rx="16" fill="#111827" stroke="#374151"/><text x="24" y="28" fill="#f9fafb" font-family="{FONT}" font-size="13">ToshitSai@github:~$ neofetch</text>{"".join(out)}</svg>'
-try:d=data()
-except Exception:d={'totalContributions':0,'weeks':[]}
-(ASSETS/'github-contribution-animation.svg').write_text(contribution(d),encoding='utf-8'); (ASSETS/'terminal-card.svg').write_text(terminal(),encoding='utf-8'); (ASSETS/'info-card.svg').write_text(info(),encoding='utf-8')
+  y=104+i*21; a=f'<animate attributeName="opacity" from="0" to="1" begin="{.15+i*.06:.2f}s" dur=".4s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="0 5" to="0 0" begin="{.15+i*.06:.2f}s" dur=".4s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1"/>'; col='#ffa657' if t=='k' else '#58a6ff' if t=='s' else '#3fb950';
+  if t=='s': content=f'<text x="20" y="{y}" fill="{col}" font-weight="700">{k}</text><line x1="72" y1="{y-4}" x2="460" y2="{y-4}" stroke="#30363d"/>'
+  elif t=='b': content=f'<circle cx="23" cy="{y-4}" r="2.5" fill="#3fb950"/><text x="34" y="{y}" fill="#c9d1d9">{escape(v)}</text>'
+  else: content=f'<text x="20" y="{y}" fill="#ffa657" font-weight="700">{escape(k)}</text><text x="112" y="{y}" fill="#c9d1d9">{escape(v)}</text>'
+  out.append(f'<g opacity="0" transform="translate(0,5)">{content}{a}</g>')
+ return f'<svg xmlns="http://www.w3.org/2000/svg" width="480" height="{H}" viewBox="0 0 480 {H}"><defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#111722"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs><rect x=".5" y=".5" width="479" height="{H-1}" rx="12" fill="url(#bg)" stroke="#30363d"/><line x1="0" y1="30" x2="480" y2="30" stroke="#30363d"/><text x="240" y="19" text-anchor="middle" fill="#7d8590" font-family="{FONT}" font-size="12">ToshitSai@github: ~$ neofetch</text><line x1="178" y1="56" x2="460" y2="56" stroke="#30363d"/><text x="20" y="60" fill="#3fb950" font-family="{FONT}" font-size="14" font-weight="700">ToshitSai <tspan fill="#7d8590">@</tspan><tspan fill="#22d3ee">github</tspan></text>{"".join(out)}</svg>'
+
+try:
+ g=get_json(); days={dt.date.fromisoformat(x['date']):int(x['contributionCount']) for w in g['weeks'] for x in w['contributionDays']}; payload={'totalContributions':int(g['totalContributions']),'levels':{d:min(4,1+n//4) for d,n in days.items()}}
+ if payload['totalContributions']==0: raise RuntimeError('GraphQL returned zero')
+except Exception:
+ try: payload=public_data()
+ except Exception as e: print(e,file=sys.stderr); sys.exit(1)
+(A/'github-contribution-animation.svg').write_text(contribution_svg(payload),encoding='utf-8'); (A/'terminal-card.svg').write_text(terminal(),encoding='utf-8'); (A/'info-card.svg').write_text(info(),encoding='utf-8'); (A/'contributions.txt').write_text(f"{payload['totalContributions']} contributions in 2026\n",encoding='utf-8')

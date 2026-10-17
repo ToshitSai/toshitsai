@@ -4,6 +4,8 @@
 
 ### 🚀 AI Product Developer · Prompt Engineer · AI Video Creator
 
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=7C3AED&center=true&vCenter=true&width=700&lines=Building+AI-powered+products;Prompt+Engineering+%7C+Product+Thinking;Turning+ideas+into+useful+experiences" alt="Typing animation" />
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-toshit--portfolio.vercel.app-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://toshit-portfolio.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Toshit%20Sai-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/toshit-sai-galam-177788276/)
 [![Instagram](https://img.shields.io/badge/Instagram-toshit.codespace-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/toshit.codespace/)
@@ -20,6 +22,12 @@
 - 💬 Ask me about AI products, prompt engineering, JavaScript, TypeScript, and Python.
 
 > I build at the intersection of product thinking, AI, and creative technology.
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg" alt="Animated contribution snake" />
+
+</div>
 
 ## ⚡ Tech Stack
 
@@ -42,10 +50,10 @@
 | Project | Description |
 | --- | --- |
 | [CourseForge AI](https://github.com/ToshitSai/courseforge-ai) | AI-powered learning and course creation experience. |
-| [Job Gem Grader](https://github.com/ToshitSai/job-gem-grader) | A TypeScript project focused on improving job and application workflows. |
+| [Job Gem Grader](https://github.com/ToshitSai/job-gem-grader) | TypeScript project for job and application workflows. |
 | [Greetly](https://github.com/ToshitSai/greetly) | AI personalized message generator built with Python. |
-| [Toshit Portfolio](https://github.com/ToshitSai/toshit-portfolio) | Personal portfolio and professional showcase built with TypeScript. |
-| [Avengers DoomsDay](https://github.com/ToshitSai/Avengers-DoomsDay-) | TypeScript project exploring creative product development. |
+| [Toshit Portfolio](https://github.com/ToshitSai/toshit-portfolio) | Personal portfolio built with TypeScript. |
+| [Avengers DoomsDay](https://github.com/ToshitSai/Avengers-DoomsDay-) | Creative TypeScript project. |
 
 ## 🎯 What I’m Working On
 
@@ -57,11 +65,11 @@
 
 <div align="center">
 
-![Toshit's GitHub stats](https://github-readme-stats.vercel.app/api?username=ToshitSai&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github)
+<img src="https://github-readme-stats.vercel.app/api?username=ToshitSai&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ToshitSai&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+<img src="https://streak-stats.demolab.com?user=ToshitSai&theme=tokyonight&hide_border=true" alt="GitHub streak" />
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ToshitSai&layout=compact&theme=tokyonight&hide_border=true)
-
-![GitHub Streak](https://streak-stats.demolab.com?user=ToshitSai&theme=tokyonight&hide_border=true)
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ToshitSai&theme=tokyo-night&hide_border=true" alt="Activity graph" />
 
 </div>
 

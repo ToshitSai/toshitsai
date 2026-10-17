@@ -33,9 +33,9 @@ jobs:
       - name: Publish dark snake to output branch
         run: |
           cp dist/github-contribution-grid-snake-dark.svg /tmp/github-contribution-grid-snake-dark.svg
-          git fetch origin output:output || true
-          git checkout --orphan output
-          git rm -rf . || true
+          git fetch origin output:output
+          git checkout -B output origin/output
+          git rm -rf .
           cp /tmp/github-contribution-grid-snake-dark.svg github-contribution-grid-snake-dark.svg
           git add github-contribution-grid-snake-dark.svg
           git commit -m "chore: publish dark contribution snake [skip ci]"

@@ -1,0 +1,1 @@
+Recommended hero: a looping 5–6 second clip, under 5 MB, 600–800 px wide, saved as assets/hero.gif.

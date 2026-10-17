@@ -19,6 +19,7 @@ def terminal():
 def info():
  rows=[('ToshitSai','@ github','u'),('','────────────────────────','d'),('Role','AI Product Developer','k'),('Focus','AI products & Prompt Engineering','k'),('College','NIAT','k'),('— Stack —','','s'),('Frontend','React','k'),('Backend','Node.js','k'),('Language','JavaScript · TypeScript · Python','k'),('AI','Prompt Engineering','k'),('— Highlights —','','s'),('●','CourseForge AI','b'),('●','Greetly','b'),('●','Job Gem Grader','b'),('●','Portfolio on Vercel','b')]; h=40+len(rows)*20+24; out=[]
  for i,(k,v,t) in enumerate(rows):
+  k=escape(k); v=escape(v)
   y=58+i*20; a=f'<animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="{i*.12:.2f}s" fill="freeze"/>'
   if t=='u':out.append(f'<text x="24" y="{y}" fill="#39D0D8" font-family="{FONT}" font-size="13" opacity="0">{k}<tspan fill="#3FB950"> {v}</tspan>{a}</text>')
   elif t=='d':out.append(f'<text x="24" y="{y}" fill="#484f58" font-family="{FONT}" font-size="11" opacity="0">{v}{a}</text>')

@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+<div align="center">
 
-## Project info
+# 👋 Hi, I'm Toshit Sai Galam
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+### 🚀 AI Product Developer · Prompt Engineer · AI Video Creator
 
-## How can I edit this code?
+[![Portfolio](https://img.shields.io/badge/Portfolio-toshit--portfolio.vercel.app-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://toshit-portfolio.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Toshit%20Sai-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/toshit-sai-galam-177788276/)
+[![Instagram](https://img.shields.io/badge/Instagram-toshit.codespace-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/toshit.codespace/)
+[![Email](https://img.shields.io/badge/Email-iamtoshitsai%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:iamtoshitsai@gmail.com)
 
-There are several ways of editing your application.
+</div>
 
-**Use Lovable**
+## 👨‍💻 About Me
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- 🎓 NIAT student focused on building practical, AI-powered products.
+- 🤖 I turn ideas into useful products with AI, automation, and modern web technologies.
+- ✍️ I enjoy prompt engineering, product thinking, and creating AI-focused video content.
+- 🌱 Currently growing across full-stack development, AI application design, and developer experience.
+- 💬 Ask me about AI products, prompt engineering, JavaScript, TypeScript, and Python.
 
-Changes made via Lovable will be committed automatically to this repo.
+> I build at the intersection of product thinking, AI, and creative technology.
 
-**Use your preferred IDE**
+## ⚡ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+<div align="center">
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![AI](https://img.shields.io/badge/AI%20Product%20Development-7C3AED?style=for-the-badge&logo=openai&logoColor=white)
+![Prompt Engineering](https://img.shields.io/badge/Prompt%20Engineering-111827?style=for-the-badge&logo=probot&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-Follow these steps:
+</div>
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Featured Projects
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Project | Description |
+| --- | --- |
+| [CourseForge AI](https://github.com/ToshitSai/courseforge-ai) | AI-powered learning and course creation experience. |
+| [Job Gem Grader](https://github.com/ToshitSai/job-gem-grader) | A TypeScript project focused on improving job and application workflows. |
+| [Greetly](https://github.com/ToshitSai/greetly) | AI personalized message generator built with Python. |
+| [Toshit Portfolio](https://github.com/ToshitSai/toshit-portfolio) | Personal portfolio and professional showcase built with TypeScript. |
+| [Avengers DoomsDay](https://github.com/ToshitSai/Avengers-DoomsDay-) | TypeScript project exploring creative product development. |
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🎯 What I’m Working On
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- Building thoughtful AI products that solve real user problems.
+- Improving prompt systems, product UX, and AI-powered workflows.
+- Sharing practical ideas through AI and technology content.
 
-**Edit a file directly in GitHub**
+## 📊 GitHub Activity
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+<div align="center">
 
-**Use GitHub Codespaces**
+![Toshit's GitHub stats](https://github-readme-stats.vercel.app/api?username=ToshitSai&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ToshitSai&layout=compact&theme=tokyonight&hide_border=true)
 
-## What technologies are used for this project?
+![GitHub Streak](https://streak-stats.demolab.com?user=ToshitSai&theme=tokyonight&hide_border=true)
 
-This project is built with:
+</div>
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Connect With Me
 
-## How can I deploy this project?
+If you’re building something interesting with AI, automation, or modern web technology, I’d love to connect.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+<div align="center">
 
-## Can I connect a custom domain to my Lovable project?
+[![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/toshit-sai-galam-177788276/)
+[![Portfolio](https://img.shields.io/badge/View%20my%20portfolio-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://toshit-portfolio.vercel.app/)
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+</div>

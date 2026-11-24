@@ -2,6 +2,8 @@
 
 <img src="./assets/github-contribution-animation.svg" alt="Animated GitHub contribution calendar" />
 
+<img src="./assets/terminal-card.svg" width="360" alt="Animated terminal portrait of Toshit Sai" />
+
 # TOSHIT SAI GALAM
 ### AI products with a human point of view.
 
